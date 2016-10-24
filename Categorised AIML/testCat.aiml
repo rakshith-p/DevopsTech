@@ -1,0 +1,43 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+
+    <category>
+        <pattern>APACHE</pattern>
+        <template>
+            <set name="topic">APACHE</set>
+		</template>
+	</category>
+	<category>
+	<pattern>MYSQL</pattern>
+		<template>
+			<set name="topic">MYSQL</set>
+		</template>
+    </category>
+	
+	<topic name="APACHE">
+	<category>
+        
+            <pattern> APPLICATION DOWN</pattern>
+				<template>
+					sudo service apache2 restart
+				</template>
+            </category>
+	<category>
+		<pattern> FILE NOT FOUND </pattern>
+			<template>
+				File not found
+			</template>
+	</category>
+	</topic>
+	
+	<topic name="MYSQL">
+	<category>
+        
+            <pattern> APPLICATION DOWN</pattern>
+				<template>
+					sudo service SQLd restart
+				</template>
+            </category>
+	</topic>
+
+</aiml>

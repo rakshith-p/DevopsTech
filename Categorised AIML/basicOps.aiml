@@ -1,0 +1,11 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basicOps.aiml -->
+
+    <category>
+        <pattern>APACHE2</pattern>
+        <template>
+            sudo service apache2 restart
+        </template>
+    </category>
+
+</aiml>
