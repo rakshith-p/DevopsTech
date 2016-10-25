@@ -2,10 +2,48 @@
 <!-- basicOps.aiml -->
 
     <category>
-        <pattern>APACHE2</pattern>
+        <pattern>APACHE</pattern>
         <template>
-            sudo service apache2 restart
-        </template>
+            <set name="topic">APACHE</set>
+		</template>
+	</category>
+	<category>
+	<pattern>MYSQL</pattern>
+		<template>
+			<set name="topic">MYSQL</set>
+		</template>
     </category>
+	
+	<topic name="APACHE">
+	<category>
+        
+            <pattern> APPLICATION DOWN</pattern>
+				<template>
+					sudo service apache2 restart
+				</template>
+            </category>
+	<category>
+		<pattern> FILE NOT FOUND </pattern>
+			<template>
+				File not found
+			</template>
+	</category>
+	</topic>
+	
+	<topic name="MYSQL">
+	<category>
+        
+            <pattern> APPLICATION DOWN</pattern>
+				<template>
+					sudo service SQLd restart
+				</template>
+    </category>
+	<category>
+        <pattern> DB NOT REACHABLE</pattern>
+				<template>
+					Database not found
+				</template>
+    </category>
+	</topic>
 
 </aiml>
